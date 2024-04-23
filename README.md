@@ -4,6 +4,14 @@ O Magento_ProcessOrderViaRabbitMQ module é uma implementação para processamen
 
 ## Informação adicional
 
+### Criação de preferência
+
+Altera o fluxo de processamento do cron do módulo PagBank para escalar as transações na fila.
+
+### Criação de plugin
+
+Altera a url de notificação enviada ao PagBank para novo endpoint a fim de escalar o processamento de transações na fila.
+
 #### Message Queue Consumer
 
 - `pagbank.process.order` - roda o processamento dos pedidos
