@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * O2TI Process Order via Rabbit Mq.
+ *
+ * Copyright © 2024 O2TI. All rights reserved.
+ *
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * @license   See LICENSE for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+    <consumer name="pagbank.process.order" queue="pagbank.process.order"
+              handler="O2TI\ProcessOrderViaRabbitMQ\Model\Consume::execute"/>
+</config>

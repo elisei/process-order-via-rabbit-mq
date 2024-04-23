@@ -1,0 +1,24 @@
+{
+    "name": "o2ti/process-order-via-rabbit-mq",
+    "description": "Rabbitmq Messaging for Fetching Order in PagBank.",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0"
+    ],
+    "version": "100.4.5",
+    "require": {
+        "php": "~8.1.0||~8.2.0||~8.3.0",
+        "magento/framework": "103.0.*",
+        "magento/framework-message-queue": "100.4.*",
+        "pagbank/payment-magento": "~100"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "O2TI\\ProcessOrderViaRabbitMQ\\": ""
+        }
+    }
+}
+

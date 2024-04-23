@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * O2TI Process Order via Rabbit Mq.
+ *
+ * Copyright © 2024 O2TI. All rights reserved.
+ *
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * @license   See LICENSE for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="PagBank\PaymentMagento\Cron\GetStatusUpdate" 
+        type="O2TI\ProcessOrderViaRabbitMQ\Plugin\PagBank\Cron\ModifiedGetStatusUpdate" />
+
+    <type name="PagBank\PaymentMagento\Gateway\Request\NotificationUrlDataRequest">
+        <plugin name="change_url" type="O2TI\ProcessOrderViaRabbitMQ\Plugin\PagBank\Gateway\Request\NotificationUrlDataRequestPlugin" sortOrder="10"/>
+    </type>
+
+    <!-- Define use Url Frontend -->
+    <type name="O2TI\ProcessOrderViaRabbitMQ\Plugin\PagBank\Gateway\Request\NotificationUrlDataRequestPlugin">
+        <arguments>
+            <argument name="frontendUrlBuilder" xsi:type="object">Magento\Framework\Url</argument>
+        </arguments>
+    </type>
+</config>
